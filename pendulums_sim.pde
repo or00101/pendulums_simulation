@@ -44,6 +44,7 @@ void draw(){
     a[i] += a_v[i];
   }
   
+  // Add delay on first frame (showing release angle more clearly).
   if (frameCount == 2)
     delay(200);
 }
