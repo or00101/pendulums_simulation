@@ -1,4 +1,4 @@
-int n = 100; //number of pendulums.
+int n = 7; //number of pendulums.
 float m = 20; //all bobs have the same mass.
 
 int[] bob_color = new int[n];
@@ -13,7 +13,7 @@ void setup(){
   size(600,600);
   
   set_start(a, 0.3, n); //setting starting angle.
-  set_start(a_v, 0.07, n); //setting starting angular velocity.
+  set_start(a_v, 0, n); //setting starting angular velocity.
   set_start(a_a, 0, n); //assigning numbers to the angular acceleratoin array.
   
   set_bob_color();
@@ -43,6 +43,9 @@ void draw(){
     //a_v[i] *= 0.995; //friction.
     a[i] += a_v[i];
   }
+  
+  if (frameCount == 2)
+    delay(200);
 }
 
 void set_start(float[] arr, float elem, int n){
